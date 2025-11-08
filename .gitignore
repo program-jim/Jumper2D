@@ -1,0 +1,14 @@
+# Godot 4+ specific ignores
+.godot/
+
+# JetBrains Settings
+/.idea
+
+# Rust target build
+/target
+
+# Godot build
+/build
+/.build
+/builds
+/.builds
