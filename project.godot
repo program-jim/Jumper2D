@@ -22,6 +22,7 @@ config/icon="uid://b2rcldrde23k3"
 [autoload]
 
 Music="*res://scene/music.tscn"
+DataManager="*res://scene/data_manager.tscn"
 
 [dotnet]
 
