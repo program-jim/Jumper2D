@@ -4,6 +4,11 @@
 # JetBrains Settings
 /.idea
 
+# Visual Studio Series
+/.vs
+/.vscode
+/.vsc
+
 # Rust target build
 /target
 

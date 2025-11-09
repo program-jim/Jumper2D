@@ -12,6 +12,7 @@ config_version=5
 
 config/name="princess-dragon-slayer"
 config/description="My first video game made with Godot."
+config/version="3.0.0"
 run/main_scene="res://scene/game.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
