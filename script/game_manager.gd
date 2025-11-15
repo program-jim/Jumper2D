@@ -15,7 +15,7 @@ func add_point():
 	score_label.text = "You collected " + str(score) + " coins"
 	
 func forbid_player_input():
-	player.isInputActive = false;
+	player.is_input_active = false;
 	
 func quit_game():
 	if Input.is_action_just_pressed("quit_game"):

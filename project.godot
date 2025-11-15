@@ -23,6 +23,7 @@ config/icon="uid://b2rcldrde23k3"
 
 Music="*res://scene/music.tscn"
 DataManager="*res://scene/data_manager.tscn"
+Utility="*res://scene/utility.tscn"
 
 [dotnet]
 
