@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var hurt_sfx = $Sounds/HurtSFX
 
 func _ready():
+	Utility.print_game("PLAYER.READY()")
 	is_input_active = true
 
 func _physics_process(delta):
@@ -54,6 +55,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
-func play_hurt():
+
+
+## Play hurt sfx.
+func play_hurt_sfx():
 	hurt_sfx.play()
