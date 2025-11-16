@@ -4,3 +4,4 @@
 
 [node name="DataManager" type="Node"]
 script = ExtResource("1_w8mmp")
+is_json_pretty = true
