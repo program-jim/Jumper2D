@@ -9,6 +9,8 @@ func _ready():
 
 func _on_body_entered(body):
 	Utility.print_game("PLAYER DIED ...")
+	DataManager.player_data[Utility.CURRENT_SCORE_PLAYER_DATA_KEY] = 0
+	DataManager.save_game_data()
 	Engine.time_scale = 0.5
 	body.play_hurt_sfx()
 	#body.get_node("Sounds").get_node("HurtSFX").play()

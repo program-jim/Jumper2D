@@ -1,22 +1,17 @@
 extends Node
 
-const GAME_DATA_PATH = "user://game_data.sav"
-const SETTINGS_DATA_PATH = "user://settings.ini"
+const GAME_DATA_PATH := "user://game_data.sav"
+const SETTINGS_DATA_PATH := "user://settings.ini"
 
 @export var is_json_pretty: bool = false
-var player_data := {
-	google = "google",
-	microsoft = "microsoft",
-	apple = "apple",
-	nvidia = "nvidia",
-	intel = "intel",
-	amd = "amd"
-}
+var player_data := {}
 
 func _ready() -> void:
-	Utility.print_game("DATA_MANAGER.READY()")
-	save_game_data()
+	Utility.print_game("DATA_MANAGER._READY()")
+	#save_game_data()
 	load_game_data()
+	#save_settings_data()
+	load_settings_data()
 
 
 ## Save game data to file, using JSON.
@@ -56,18 +51,33 @@ func load_game_data() -> void:
 ## Save settings data to file, using Config.
 ## Path: user://settings.ini
 func save_settings_data() -> void:
-	var config = ConfigFile.new()
+	Utility.print_game("DATA_MANAGER.SAVE_SETTINGS_DATA()")
+	var config := ConfigFile.new()
 	if not config:
 		Utility.print_game("DATA_MANAGER.SAVE_SETTINGS_DATA() -> FAILED: CONFIG FILE IS NULL !!!")
 		return
-	
+
+	# Save data.
 	config.set_value("Example", "example", "example")
 	
 	config.save(SETTINGS_DATA_PATH)
-	Utility.print_game("DATA_MANAGER.SAVE_SETTINGS()")
+	Utility.print_game("DATA_MANAGER.SAVE_SETTINGS_DATA() -> SUCCESSFULLY")
 
 
 ## Load settings data from file, using Config.
 ## Path: user://settings.ini
 func load_settings_data() -> void:
-	Utility.print_game("DATA_MANAGER.LOAD_SETTINGS()")
+	Utility.print_game("DATA_MANAGER.LOAD_SETTINGS_DATA()")
+	var config := ConfigFile.new()
+	if not config:
+		Utility.print_game("DATA_MANAGER.LOAD_SETTINGS_DATA() -> FAILED: CONFIG FILE IS NULL !!!")
+		return
+	var err := config.load(SETTINGS_DATA_PATH)
+	if err != OK:
+		Utility.print_game("DATA_MANAGER.LOAD_SETTINGS_DATA() -> FAILED: FAILED TO LOAD CONFIG FILE !!!")
+		return
+
+	# Load data.
+	config.get_value("Example", "example", "example")
+
+	Utility.print_game("DATA_MANAGER.LOAD_SETTINGS_DATA() -> SUCCESSFULLY")

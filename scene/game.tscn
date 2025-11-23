@@ -243,14 +243,25 @@ script = ExtResource("1_5c4id")
 
 [node name="Score Label" type="Label" parent="Game Manager"]
 offset_left = -561.0
-offset_top = -370.0
+offset_top = -381.0
 offset_right = -229.0
-offset_bottom = -332.0
+offset_bottom = -343.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_7xk7b")
 text = "You collected X coins."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="HighestPoint" type="Label" parent="Game Manager"]
+offset_left = -466.0
+offset_top = -361.0
+offset_right = -328.0
+offset_bottom = -353.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_6px63")
+theme_override_font_sizes/font_size = 8
+text = "Highest point: X"
+horizontal_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("1_x0k3c")]
 unique_name_in_owner = true
@@ -378,9 +389,9 @@ text = "Pick  up the coin."
 
 [node name="Congratulation" type="Label" parent="Labels"]
 offset_left = -450.0
-offset_top = -384.0
+offset_top = -395.0
 offset_right = -343.0
-offset_bottom = -376.0
+offset_bottom = -387.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_6px63")
 theme_override_font_sizes/font_size = 8
@@ -388,9 +399,9 @@ text = "CONGRATULATIONS"
 
 [node name="Thank" type="Label" parent="Labels"]
 offset_left = -466.0
-offset_top = -350.0
+offset_top = -351.0
 offset_right = -328.0
-offset_bottom = -342.0
+offset_bottom = -343.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_6px63")
 theme_override_font_sizes/font_size = 8
